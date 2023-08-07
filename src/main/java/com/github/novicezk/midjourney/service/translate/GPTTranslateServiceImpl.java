@@ -61,7 +61,7 @@ public class GPTTranslateServiceImpl implements TranslateService {
 		if (!containsChinese(prompt)) {
 			return prompt;
 		}
-		Message m1 = Message.builder().role(Message.Role.SYSTEM).content("把中文翻译成英文").build();
+		Message m1 = Message.builder().role(Message.Role.SYSTEM).content("Перевести с русского или если другого языка на английский").build();
 		Message m2 = Message.builder().role(Message.Role.USER).content(prompt).build();
 		ChatCompletion chatCompletion = ChatCompletion.builder()
 				.messages(Arrays.asList(m1, m2))
